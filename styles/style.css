@@ -1,3 +1,56 @@
-.h1 {
-    color: white;
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWtvZGo1bXgyYmlicjA2dDU1eWZ0djdkaTE0dWNueWphMHpjNjE3YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1TppJpKDE9GNuej0Y9/giphy.gif);
+    background-size: cover;
+    background-position: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px; 
+    color: white; 
+    opacity: 0; 
+    animation: fadeIn 2s forwards; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; 
+    color: #AC542F; /
+    padding: 10px 20px; 
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 20px; 
+}
+
+.navbar ul li a {
+    color: inherit; 
+    text-decoration: none;
 }
