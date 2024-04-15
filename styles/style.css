@@ -1,56 +1,93 @@
-html, body {
-    height: 100%;
+body, html {
     margin: 0;
-}
-
-body {
-    background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWtvZGo1bXgyYmlicjA2dDU1eWZ0djdkaTE0dWNueWphMHpjNjE3YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1TppJpKDE9GNuej0Y9/giphy.gif);
-    background-size: cover;
-    background-position: center;
+    padding: 0;
     font-family: "Open Sans", sans-serif;
-}
-
-.text {
+    background-color: #fff;
+  }
+  #gif-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  #gif-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 24px; 
-    color: white; 
-    opacity: 0; 
-    animation: fadeIn 2s forwards; 
-}
-
-@keyframes fadeIn {
+    color: #fff;
+    font-size: 40px;
+    opacity: 0;
+    animation: fadeIn 5s forwards;
+  }
+  @keyframes fadeIn {
     from {
-        opacity: 0;
+      opacity: 0;
     }
     to {
-        opacity: 1;
+      opacity: 1;
     }
-}
-
-.navbar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: white; 
-    color: #AC542F; /
-    padding: 10px 20px; 
-
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar ul li {
-    display: inline;
-    margin-right: 20px; 
-}
-
-.navbar ul li a {
-    color: inherit; 
+  }
+  nav {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav a {
     text-decoration: none;
-}
+    color: #AC542F;
+    margin: 0 15px;
+  }
+  header {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .intro-text {
+    padding: 0 150px;
+    text-align: center;
+  }
+  
+  #map {
+      height: 400px;
+      width: 100%;
+    }
+
+  .organization-section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .organization-section h2 {
+    margin-bottom: 30px;
+  }
+  .organization-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .organization-logo {
+    margin: 0 20px;
+    width: 250px;
+  }
+  .organization-logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    .organization-logos {
+      flex-direction: column;
+    }
+    .organization-logo {
+      margin: 20px 0;
+    }
+  }
+
+  footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }

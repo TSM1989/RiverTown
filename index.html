@@ -15,24 +15,56 @@
     <meta name="twitter:creator" content="@t.maiorca89">
 
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
-<body>
-    <audio src="files/riveraudio.mp3" autoplay loop preload="auto"></audio>
-    <div class="container">
-        <div class="text">
-            <h1>River Towns</h1>
+    <link rel="js" href="scripts/rivertown.js">
+    
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet-providers"></script>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        </head>
+        
+        <body>
+        <div id="gif-container">
+          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWtvZGo1bXgyYmlicjA2dDU1eWZ0djdkaTE0dWNueWphMHpjNjE3YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1TppJpKDE9GNuej0Y9/giphy.gif" alt="Your GIF" style="width: 100%; height: 100%; object-fit: cover;">
+          <div id="gif-text">
+            River Towns
+          </div>
         </div>
-    </div>
-    <div class="navbar">
-        <!-- Your navbar content here -->
-        <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Map</a></li>
-            <li><a href="#">Episodes</a></li>
-            <li><a href="#">Meet the Team</a></li>
-        </ul>
-    </div>
-</body>
+        
+        <nav>
+          <a href="#">About</a>
+          <a href="#">Map</a>
+          <a href="#">Episodes</a>
+          <a href="#">Meet the Team</a>
+        </nav>
+        
+        <header>
+          <h1>Welcome to River Towns</h1>
+          <p class="intro-text">Join host Tina Casagrand Foss, the founder, publisher, and editor-in-chief of The New Territory magazine, on a magical Disneyland log ride down the Missouri River. Along the way, we’ll get to see how this mighty waterway shapes the people and places it flows through. </p>
+        </header>
+        
+        <div id="map"></div>
+        
+        <div class="organization-section">
+          <h2>A collaboration between</h2>
+          <div class="organization-logos">
+            <div class="organization-logo">
+              <img src="img/cmlogo.png" alt="Organization 1">
+            </div>
+            <div class="organization-logo">
+              <img src="img/kbialogo.png" alt="Organization 2">
+            </div>
+            <div class="organization-logo">
+              <img src="img/ntlogo.png" alt="Organization 3">
+            </div>
+          </div>
+        </div>
+        
+        <footer>
+          &copy; 2024 Columbia Missourian. All rights reserved.
+        </footer>   
+        </body>
+        </html>
