@@ -37,19 +37,32 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
   }
   nav a {
     text-decoration: none;
     color: #FFFF;
     margin: 0 15px;
-    font-size: 22.5px;
+    font-size: 20px;
     transition: font-size 0.3s, text-decoration 0.3s;
   }
 
   nav a:hover {
-  font-size: 25px; 
+  font-size: 23px; 
   text-decoration: underline;
   color: #fff;
+}
+
+nav img.logo {
+  width: 115px; 
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -61,21 +74,32 @@
     nav a:hover {
       font-size: 17.5px;
     }
+
+    nav {
+      justify-content: center;
+    } 
+
+    .logo {
+      display: none;
+    }
   }
 
   h1 {
     text-align: center;
-    padding: 15px 0;
+    padding: 30px 0;
+    font-size:35px;
   }
 
   p {
     text-align: center;
-    padding: 0 30px;
+    padding: 30 30px;
+    max-width: 750px;
+    margin: auto;
   }
 
   @media screen and (max-width: 1000px) {
     p {
-        padding: 0 5px;
+        max-width: 400px;
     }
 
     h1 {
@@ -120,15 +144,19 @@
 <body>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="audio.html">Audio</a>
-        <a href="visuals.html">Visuals</a>
-        <a href="meet.html">Meet the Team</a>
+        <div>
+          <a href="index.html"><img class="logo" src="img/RiverTownLogo.png" alt="Logo"></a>
+        </div>
+        <div class="nav-right">
+          <a href="about.html">About</a>
+          <a href="audio.html">Audio</a>
+          <a href="visuals.html">Visuals</a>
+          <a href="meet.html">Meet the Team</a>
+        </div>
       </nav>
 
 
-    <h1>About the project</h1>
+    <h1 style="font-weight: 700">About the project</h1>
       <p>The River Town podcast is a magical Disneyland log ride down the Missouri River. Our host, Tina Casagrand Foss, is the founder, publisher, and editor-in-chief of The New Territory magazine. She’s spent her whole life near the Missouri River and the rivers that feed it. In this podcast, she is our river guide. And we need one!
         <br><br>
         Because, you might – probably – know this river was The Way that Lewis & Clark explored the Louisiana Territory. But, did you know the Missouri River is the longest river in North America? Or that, near Missouri’s capital city, the place where Tina lives, the river fed and transported the Osage Nation for thousands of years -- until their lands were reduced to the current Osage Reservation in Northern Oklahoma. The river holds history.  
@@ -140,7 +168,7 @@
         </p>
 <br><br>
 
-        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/936424195?h=fb7dd276b9&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="20240414_CoopersLanding_04"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/936424195?h=fb7dd276b9&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="20240414_CoopersLanding_04"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
    <br><br>
       <footer>
         &copy; 2024 Columbia Missourian. All rights reserved.

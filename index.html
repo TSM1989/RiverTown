@@ -59,7 +59,7 @@
   }
   @media (max-width: 767px) {
   video {
-    display: none; /* Hide the video on mobile */
+    display: none; 
   }
   
   #gif-container {
@@ -111,6 +111,12 @@
         opacity: 0; 
     }
 }
+
+@media screen and (max-width: 768px) {
+    #scroll-arrow {
+      visibility: hidden;
+    }
+  }
   nav {
     background-color: #AC542F;
     padding: 20px 0;
@@ -118,18 +124,31 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
   }
   nav a {
     text-decoration: none;
     color: #FFFF;
     margin: 0 15px;
-    font-size: 22.5px;
+    font-size: 20px;
     transition: font-size 0.3s, text-decoration 0.3s;
   }
 
   nav a:hover {
-  font-size: 25px; 
+  font-size: 23px; 
   text-decoration: underline;
+}
+
+nav img.logo {
+  width: 115px; 
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -140,6 +159,14 @@
     }
     nav a:hover {
       font-size: 17.5px;
+    }
+
+    nav {
+      justify-content: center;
+    } 
+
+    .logo {
+      display: none;
     }
   }
 
@@ -255,13 +282,17 @@
 
 <div id="scroll-arrow"></div>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="audio.html">Audio</a>
-  <a href="visuals.html">Visuals</a>
-  <a href="meet.html">Meet the Team</a>
-</nav>
+  <nav>
+    <div>
+      <a href="index.html"><img class="logo" src="img/RiverTownLogo.png" alt="Logo"></a>
+    </div>
+    <div class="nav-right">
+      <a href="about.html">About</a>
+      <a href="audio.html">Audio</a>
+      <a href="visuals.html">Visuals</a>
+      <a href="meet.html">Meet the Team</a>
+    </div>
+  </nav>
 <main id="content">
 <header>
   <h1>Welcome to River Town</h1>

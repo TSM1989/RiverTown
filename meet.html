@@ -37,19 +37,32 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
   }
   nav a {
     text-decoration: none;
     color: #FFFF;
     margin: 0 15px;
-    font-size: 22.5px;
+    font-size: 20px;
     transition: font-size 0.3s, text-decoration 0.3s;
   }
 
   nav a:hover {
-  font-size: 25px; 
+  font-size: 23px; 
   text-decoration: underline;
   color: #fff;
+}
+
+nav img.logo {
+  width: 115px; 
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -61,11 +74,20 @@
     nav a:hover {
       font-size: 17.5px;
     }
+
+    nav {
+      justify-content: center;
+    } 
+
+    .logo {
+      display: none;
+    }
   }
 
   h1 {
     text-align: center;
-    padding: 15px 0;
+    padding: 30px 0;
+    font-size: 35px;
   }
 
   h2 {
@@ -76,8 +98,15 @@
   h6 {
     text-align: center;
     padding: 15px 0;
+    max-width: 750px;
+    margin: auto;
   }
   
+  @media screen and (max-width: 768px) {
+    h6 {
+       max-width: 400px;
+    }
+  }
 
 
   .card {
@@ -117,17 +146,21 @@
 
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="audio.html">Audio</a>
-        <a href="visuals.html">Visuals</a>
-        <a href="meet.html">Meet the Team</a>
-      </nav>
+  <nav>
+    <div>
+      <a href="index.html"><img class="logo" src="img/RiverTownLogo.png" alt="Logo"></a>
+    </div>
+    <div class="nav-right">
+      <a href="about.html">About</a>
+      <a href="audio.html">Audio</a>
+      <a href="visuals.html">Visuals</a>
+      <a href="meet.html">Meet the Team</a>
+    </div>
+  </nav>
 
 
 
-    <h1>Meet the River Town Team</h1><br>
+    <h1 style="font-weight: 700">Meet the River Town Team</h1><br>
       <h6>River Town is made possible by a devoted team of professional and student journalists at the Missouri School of Journalism. Audio producers from KBIA, staff photojournalists and videographers from the Columbia Missourian worked from August 2023 into May 2024 to document the people and places along the Missouri River. </h6>
       <br><br>
       <h2>Audio Team</h2>
