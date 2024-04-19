@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <title>River Town</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="author" content="Personal Website">
+
+    <meta property="og:image" content="img/podcast-logo.png">
+    <meta property="og:image:width" content="965">
+    <meta property="og:image:height" content="363">
+    <meta property="og:title" content="Teddy Maiorca"> 
+    <meta property="og:description" content="Personal Website">
+    <meta property="og:type" content="website">
+    <meta name="twitter:creator" content="@t.maiorca89">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<style>
+      body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    background-color: #003c41;
+    color: #fff;
+  }
+
+  nav {
+    background-color: #AC542F;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav a {
+    text-decoration: none;
+    color: #FFFF;
+    margin: 0 15px;
+    font-size: 22.5px;
+    transition: font-size 0.3s, text-decoration 0.3s;
+  }
+
+  nav a:hover {
+  font-size: 25px; 
+  text-decoration: underline;
+  color: #fff;
+}
+  h1 {
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  h2 {
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  h6 {
+    text-align: center;
+    padding: 15px 0;
+  }
+  
+
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border:#003c41;
+    color: black;
+  }
+  .card-img-top {
+    height: 300px; 
+    object-fit: cover;
+  }
+  .card-body {
+    flex: 1;
+    overflow-y: auto;
+  }
+  .overflow-auto {
+    overflow-y: auto;
+    max-height: 200px; 
+  }
+
+  .visuals-container {
+  max-width: 100%;
+  position: relative; /* Ensure absolute positioning works within this container */
+}
+
+.visual {
+  position: relative; /* Ensure absolute positioning works relative to this container */
+  margin-bottom: 5px; 
+}
+
+.visual img {
+  display: block;
+  width: 100%;
+}
+
+.visual-content {
+  position: absolute;
+  top: 50%; /* Position the content in the middle of the image */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the content horizontally and vertically */
+  padding: 20px;
+  text-align: center; /* Center-align the content */
+  width: 90%; /* Adjust width as needed */
+}
+
+.visual-content h2 {
+  font-size: 24px; 
+  margin-bottom: 10px;
+}
+
+.visual-content p {
+  font-size: 16px; 
+  color: #fff; 
+}
+
+
+  @media screen and (max-width: 1000px) {
+    .card-img-top {
+        width: 100%;
+        height: auto;
+    }
+  }
+
+  footer {
+    background-color: #AC542F;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+</style>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="audio.html">Audio</a>
+        <a href="visuals.html">Visuals</a>
+        <a href="meet.html">Meet the Team</a>
+      </nav>
+
+
+    <h1>Visual Stories</h1><br>
+
+    <div class="visuals-container">
+        <div class="visual">
+          <img src="img/story1.jpeg" alt="Image 1">
+          <div class="visual-content">
+            <h2>Coming soon</h2>
+            <p>Keep an eye out for visual stories on the River coming soon</p>
+          </div>
+        </div>
+        <div class="visual">
+          <img src="img/story2.jpeg" alt="Image 2">
+          <div class="visual-content">
+            <h2>Coming soon</h2>
+            <p>Keep an eye out for visual stories on the River coming soon</p>
+          </div>
+        </div>
+        <div class="visual">
+            <img src="img/story3.jpeg" alt="Image 2">
+            <div class="visual-content">
+              <h2>Coming soon</h2>
+              <p>Keep an eye out for visual stories on the River coming soon</p>
+            </div>
+        </div>
+        <div class="visual">
+            <img src="img/story4.jpeg" alt="Image 2">
+            <div class="visual-content">
+              <h2>Coming soon</h2>
+              <p>Keep an eye out for visual stories on the River coming soon</p>
+            </div>
+        </div>
+        <div class="visual">
+            <img src="img/story5.jpeg" alt="Image 2">
+            <div class="visual-content">
+              <h2>Coming soon</h2>
+              <p>Keep an eye out for visual stories on the River coming soon</p>
+            </div>
+        </div>
+      </div>
+    
+      <footer>
+        &copy; 2024 Columbia Missourian. All rights reserved.
+      </footer>
+</body>
