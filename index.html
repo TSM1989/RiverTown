@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>River Town Landing Page</title>
+<title>River Town</title>
+
+<meta property="og:image" content="img/podcast-logo.png">
+<meta property="og:image:width" content="965">
+<meta property="og:image:height" content="363">
+<meta property="og:title" content="River Town"> 
+<meta property="og:description" content="River Town">
+<meta property="og:type" content="website">
+<meta name="twitter:creator" content="@t.maiorca89">
+
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet-providers"></script>
@@ -36,13 +45,25 @@
     margin: 0;
     padding: 0;
     font-family: "Open Sans", sans-serif;
-    background-color: #fff;
+    background-color: #003c41;
+    color: #ffff;
   }
   #gif-container {
     position: relative;
     height: 100vh;
     overflow: hidden;
   }
+  @media (max-width: 767px) {
+  video {
+    display: none; /* Hide the video on mobile */
+  }
+  
+  #gif-container {
+    background-image: url('img/mobile-cover.png');
+    background-size: cover;
+    background-position: center;
+  }
+}
   #gif-text {
     position: absolute;
     top: 50%;
@@ -85,7 +106,7 @@
     }
 }
   nav {
-    background-color: #fff;
+    background-color: #AC542F;
     padding: 20px 0;
     text-align: center;
     position: sticky;
@@ -94,9 +115,16 @@
   }
   nav a {
     text-decoration: none;
-    color: #AC542F;
+    color: #FFFF;
     margin: 0 15px;
+    font-size: 22.5px;
+    transition: font-size 0.3s, text-decoration 0.3s;
   }
+
+  nav a:hover {
+  font-size: 25px; 
+  text-decoration: underline;
+}
 
   header {
     padding: 50px 0;
@@ -109,7 +137,8 @@
   
   #map {
       height: 400px;
-      width: 100%;
+      width: 90%;
+      margin: 0 auto;
     }
 
   .organization-section {
@@ -168,8 +197,10 @@
     }
   }
 
+  
+
   footer {
-    background-color: #000;
+    background-color: #AC542F;
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -201,18 +232,20 @@
 <div id="scroll-arrow"></div>
 
 <nav>
-  <a href="index1.html">Home</a>
-  <a href="#">About</a>
-  <a href="#">Podcasts</a>
-  <a href="#">Visuals</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="audio.html">Audio</a>
+  <a href="visuals.html">Visuals</a>
   <a href="meet.html">Meet the Team</a>
 </nav>
 <main id="content">
 <header>
   <h1>Welcome to River Town</h1>
-  <p class="intro-text">Join host Tina Casagrand Foss, the founder, publisher, and editor-in-chief of The New Territory magazine, on a magical Disneyland log ride down the Missouri River. Along the way, we’ll get to see how this mighty waterway shapes the people and places it flows through. </p>
+  <p class="intro-text">Join host Tina Casagrand Foss, the founder, publisher and editor-in-chief of The New Territory magazine, on a magical Disneyland log ride down the Missouri River. Along the way, we’ll get to see how the mighty waterway shapes the people and places it flows through stories from the Columbia Missourian visual team.</p>
 </header>
 
+<h2 style="text-align: center">Discover the towns of the river</h2>
+<p style="text-align: center">Tap or click on each pin to dive into life on the Big Muddy</p>
 <div id="map"></div>
 
 <div class="organization-section">
@@ -237,23 +270,38 @@
 </main>
 <script>
 
-    var map = L.map('map').setView([38.5731, -92.6032], 7);
+var map = L.map('map').setView([39.214, -92.392], 7.5);
 
+var accessToken = 'pk.eyJ1IjoidG0tZ3JhcGhpY3NtaXoiLCJhIjoiY2x2NnVqMWR5MDM3ODJwbzZ4ZXlrODZqeCJ9.PVNBPrOONk_VDRazeS0lLQ';
 
-    L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map);
+var styleID = 'mapbox://styles/tm-graphicsmiz/clv6u3uil02z001p65dondlnm';
 
-    // Edit locations and links later
-    var locations = [
-      {lat: 38.9736, lng: -92.7432, title: 'Location 1', link: 'https://example.com/page1'},
-      {lat: 38.9800, lng: -92.5641, title: 'Location 2', link: 'https://example.com/page2'},
-      {lat: 38.81617, lng: -92.38320, title: 'Location 3', link: 'https://example.com/page3'}
-    ];
+var mapboxTileLayerUrl = 'https://api.mapbox.com/styles/v1/tm-graphicsmiz/clv6u3uil02z001p65dondlnm/tiles/{z}/{x}/{y}?access_token=' + accessToken;
 
+var mapboxTileLayer = L.tileLayer(mapboxTileLayerUrl, {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
+  maxZoom: 18,
+  id: 'mapbox://styles/tm-graphicsmiz/clv6u3uil02z001p65dondlnm'
+}).addTo(map);
 
-    locations.forEach(function(location) {
-      var marker = L.marker([location.lat, location.lng]).addTo(map);
-      marker.bindPopup('<b>' + location.title + '</b><br><a href="' + location.link + '">Visit Page</a>');
-    });
+// Edit locations and links later
+var locations = [
+  {lat: 38.7042, lng: -91.4374, title: 'Hermann', link: 'https://example.com/page1'},
+  {lat: 38.9800, lng: -92.5641, title: 'Rocheport', link: 'https://example.com/page2'},
+  {lat: 38.9736, lng: -92.7432, title: 'Boonville', link: 'https://example.com/page3'},
+  {lat: 39.0173, lng: -92.7374, title: 'New Franklin', link: 'https://example.com/page3'},
+  {lat: 39.0697, lng: -92.9466, title: 'Arrow Rock', link: 'https://example.com/page3'},
+  {lat: 39.2273, lng: -92.8466, title: 'Glasgow', link: 'https://example.com/page3'},
+  {lat: 38.9061, lng: -92.5232, title: 'Wooldridge', link: 'https://example.com/page3'},
+  {lat: 38.4420, lng: -91.9993, title: 'Westphalia', link: 'https://example.com/page3'},
+  {lat: 38.5767, lng: -92.1735, title: 'Jefferson City', link: 'https://example.com/page3'}
+];
+
+locations.forEach(function(location) {
+  var marker = L.marker([location.lat, location.lng]).addTo(map);
+  marker.bindPopup('<b>' + location.title + '</b><br><a href="' + location.link + '">Coming Soon</a>');
+});
+
 
 </script>
     
