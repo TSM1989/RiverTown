@@ -45,12 +45,12 @@
     margin: 0;
     padding: 0;
     font-family: "Open Sans", sans-serif;
-    background-color: #003c41;
+    background-color: #354F52;
     color: #ffff;
   }
 
   nav {
-    background-color: #AC542F;
+    background-color: #84A98C;
     padding: 20px 0;
     text-align: center;
     position: sticky;
@@ -100,11 +100,21 @@ nav img.logo {
     .logo {
       display: none;
     }
+
+    .intro {
+      max-width: 400px;
+    }
+
   }
 
 h1 {
   text-align: center;
   padding: 15px 0;
+}
+
+.intro {
+  text-align: center;
+  padding: 0 150px;
 }
 
 .card {
@@ -133,12 +143,26 @@ h1 {
 }
 
 .player {
-      background-color: #AC542F;
+      background-color: #52796F;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
       margin-bottom: 20px;
     }
+
+.player-content {
+  display: flex;
+  align-items: center;
+}
+
+.podcast-logo {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.details {
+  flex: 1;
+}
 
     audio {
       width: 100%;
@@ -160,6 +184,10 @@ ul li a:hover {
   color: #fff; 
 }
 
+#rss-feed li:nth-child(2) {
+  display: none; 
+}
+
 footer {
   background-color: #AC542F;
   color: #fff;
@@ -172,9 +200,10 @@ footer {
 
     <nav>
         <div>
-          <a href="index.html"><img class="logo" src="img/RiverTownLogo.png" alt="Logo"></a>
+          <a href="index.html"><img class="logo" src="img/RIVER TOWN.png" alt="Logo"></a>
         </div>
         <div class="nav-right">
+          <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="audio.html">Audio</a>
           <a href="visuals.html">Visuals</a>
@@ -184,11 +213,19 @@ footer {
 
   <h1 style="font-family: 'Open Sans', sans-serif">River Town Podcast</h1>
 
+  <p class="intro">Join host Tina Casagrand Foss, the founder, publisher and editor-in-chief of The New Territory magazine, on a magical Disneyland log ride down the Missouri River. Along the way, we’ll get to see how the mighty waterway shapes the people and places it flows through.</p>
+
+    <br><br>
 
   <div class="player">
+    <div class="player-content">
+   <img src="img/RiverTownLogoNew.png" alt="river town podcast logo" class="podcast-logo">
+    <div class="details">
     <h2 id="rss-feed">Episode One: A Flood Monster, Music and a Pretzel Boat</h2>
     <p style="font-size:medium">In the very first episode of River Town, we’re exploring how the Missouri River of today inspires artists -- from folk musicians, to watercolor painters with a penchant for pretzel paddle boating, to writers recounting their childhood “flood monster” memories. We want to know . . . no shame for this pun . . . How does the Missouri River help artists find their flow?.</p>
     <p style="font-size:small">By Kiana Fernandes, Tina Casagrand Foss, Kaylin Hellyer, Abigail Keel, Abby Lee, Ailing Li, Ellie Lin, Jessica Vaughn Martin, Olivia Mizelle, Tadeo Ruiz</p>
+   </div>
+   </div>
     <audio controls>
         <source src="https://feedpress.me/link/23951/16654954/rivertown-ep1.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
@@ -196,9 +233,14 @@ footer {
   </div>
 
   <div class="player">
+    <div class="player-content">
+      <img src="img/RiverTownLogoNew.png" alt="river town podcast logo" class="podcast-logo">
+      <div class="details">
     <h2 id="rss-feed">Episode Two: Pedal, or Paddle?</h2>
     <p style="font-size:medium">In this episode, we’re having some fun. We’ll meet people who choose to spend their time sweating on the river. Our producers spent this past autumn meeting casual trail users, dry-land athletes and big river paddlers who enjoy actually getting their feet wet.</p>
     <p style="font-size:small">By Kiana Fernandes, Tina Casagrand Foss, Kaylin Hellyer, Abigail Keel, Abby Lee, Ailing Li, Ellie Lin, Jessica Vaughn Martin, Olivia Mizelle, Tadeo Ruiz</p>
+    </div>
+    </div>
     <audio controls>
         <source src="https://feedpress.me/link/23951/16665479/rivertown-ep2-final.wav" type="audio/mpeg">
       Your browser does not support the audio element.
@@ -207,19 +249,18 @@ footer {
 
 
   <script>
-    // URL of the RSS feed
+  
     const rssFeedUrl = 'https://feedpress.me/rivertown.xml';
 
-    // Fetch the RSS feed data
     fetch(rssFeedUrl)
       .then(response => response.text())
       .then(data => {
-        // Parse the XML data
+
         const parser = new DOMParser();
         const xml = parser.parseFromString(data, 'text/xml');
         const items = xml.querySelectorAll('item');
 
-        // Create HTML content from the parsed data
+
         let html = '<ul>';
         items.forEach(item => {
           const title = item.querySelector('title').textContent;
@@ -228,14 +269,12 @@ footer {
         });
         html += '</ul>';
 
-        // Display the HTML content in the specified div
         document.getElementById('rss-feed').innerHTML = html;
       })
       .catch(error => {
         console.error('Error fetching RSS feed:', error);
       });
 
-    // Function to play audio when a link is clicked
     document.getElementById('rss-feed').addEventListener('click', function(event) {
       event.preventDefault();
       const link = event.target.closest('a');
