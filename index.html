@@ -353,20 +353,20 @@ var mapboxTileLayer = L.tileLayer(mapboxTileLayerUrl, {
 
 // Edit locations and links later
 var locations = [
-  {lat: 38.7042, lng: -91.4374, title: 'Hermann', link: 'https://example.com/page1'},
-  {lat: 38.9800, lng: -92.5641, title: 'Rocheport', link: 'https://example.com/page2'},
-  {lat: 38.9736, lng: -92.7432, title: 'Boonville', link: 'https://example.com/page3'},
-  {lat: 39.0173, lng: -92.7374, title: 'New Franklin', link: 'https://example.com/page3'},
-  {lat: 39.0697, lng: -92.9466, title: 'Arrow Rock', link: 'https://example.com/page3'},
-  {lat: 39.2273, lng: -92.8466, title: 'Glasgow', link: 'https://example.com/page3'},
-  {lat: 38.9061, lng: -92.5232, title: 'Wooldridge', link: 'https://example.com/page3'},
-  {lat: 38.4420, lng: -91.9993, title: 'Westphalia', link: 'https://example.com/page3'},
-  {lat: 38.5767, lng: -92.1735, title: 'Jefferson City', link: 'https://example.com/page3'}
+  {lat: 38.7042, lng: -91.4374, title: 'Hermann', link: 'https://www.columbiamissourian.com/rivertown/visuals/unleashing-champions-dachshunds-take-over-wurstfest/article_f64e1bae-01c2-11ef-96b2-f3b3a46a623d.html'},
+  {lat: 38.9800, lng: -92.5641, title: 'Rocheport', link: 'https://www.columbiamissourian.com/rivertown/visuals/rocheport-family-prepare-for-the-season-on-growing-farm/article_33332152-2286-11ef-b694-fb3dcb09b8ad.html'},
+  {lat: 38.9736, lng: -92.7432, title: 'Boonville', link: 'https://www.columbiamissourian.com/rivertown/visuals/the-doctor-is-in-a-look-into-the-life-of-cooper-countys-veterinarian/article_5e6b8332-149e-11ef-9253-8b0b6444cf3f.html'},
+  {lat: 39.0173, lng: -92.7374, title: 'New Franklin', link: 'https://www.columbiamissourian.com/rivertown/visuals/one-sentence-good-people-the-new-franklin-community/article_41c7acb0-f6ad-11ee-8589-b7b4864a153c.html'},
+  {lat: 39.0697, lng: -92.9466, title: 'Arrow Rock', link: 'https://www.columbiamissourian.com/rivertown/visuals/closed-till-spring-devoted-bed-breakfast-owner-prepares-for-tourism-season/article_22f312b0-fc53-11ee-a0b3-b3a38c31a102.html'},
+  {lat: 39.2273, lng: -92.8466, title: 'Glasgow', link: 'https://www.columbiamissourian.com/rivertown/visuals/the-story-of-hendersons-from-founders-great-great-granddaughter/article_9121601c-13e0-11ef-8185-370e1d234b80.html'},
+  {lat: 38.9061, lng: -92.5232, title: 'Wooldridge', link: 'https://www.columbiamissourian.com/rivertown/visuals/retired-horses-become-mans-best-friend/article_830d5fc8-033f-11ef-9315-47feaeaebbdc.html'},
+  {lat: 38.4420, lng: -91.9993, title: 'Westphalia', link: 'https://www.columbiamissourian.com/rivertown/visuals/stained-glass-artist-reflects-on-her-gift/article_5f7d7f2c-13e1-11ef-9bb8-d79c6fde50ab.html'},
+  {lat: 38.5767, lng: -92.1735, title: 'Jefferson City', link: 'https://www.columbiamissourian.com/rivertown/visuals/boxing-coach-duo-show-aspiring-boxers-the-ropes/article_4aea1c9a-13e2-11ef-8b32-b7d474ba1d0b.html'}
 ];
 
 locations.forEach(function(location) {
   var marker = L.marker([location.lat, location.lng]).addTo(map);
-  marker.bindPopup('<b>' + location.title + '</b><br><a href="' + location.link + '">Coming Soon</a>');
+  marker.bindPopup('<b>' + location.title + '</b><br><a href="' + location.link + '">See the stories</a>');
 });
 
 
